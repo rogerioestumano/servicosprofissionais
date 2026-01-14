@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Rogério Estumano - Serviços Profissionais</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #eef3f7, #f7f9fb);
+            color: #1f2d3d;
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1c5d99;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1c5d99;
+            font-weight: 500;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f3c5b;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1c5d99;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            margin: 8px 0;
+            color: #4a5d73;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1c5d99;
+            color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #144774;
+        }
+
+        .contact {
+            background: #ffffff;
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .contact h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #1c5d99;
+        }
+
+        .contact form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccd6e0;
+            font-size: 14px;
+        }
+
+        .contact textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7c93;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rogério Estumano<br><small>Serviços Profissionais</small></h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Soluções completas para sua casa e negócio</h2>
+</section>
+
+<section class="services">
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Limpeza de Vidro">
+        <h3>Limpeza de Vidro</h3>
+        <ul>
+            <li>Janelas residenciais</li>
+            <li>Fachadas comerciais</li>
+            <li>Pós-obra</li>
+        </ul>
+        <a href="#" class="btn">Saiba mais</a>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/285/285673.png" alt="Roçagem">
+        <h3>Roçagem Profissional</h3>
+        <ul>
+            <li>Corte de grama</li>
+            <li>Limpeza de terrenos</li>
+            <li>Manutenção de jardins</li>
+        </ul>
+        <a href="#" class="btn">Saiba mais</a>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png" alt="Administrativo">
+        <h3>Rotinas Administrativas</h3>
+        <ul>
+            <li>Organização financeira</li>
+            <li>Gestão de documentos</li>
+            <li>Suporte virtual</li>
+        </ul>
+        <a href="#" class="btn">Saiba mais</a>
+    </div>
+</section>
+
+<section class="contact">
+    <h3>Contato</h3>
+    <form>
+        <input type="text" placeholder="Nome">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Mensagem"></textarea>
+        <button class="btn" type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Rogério Estumano - Serviços Profissionais
+</footer>
+
+</body>
+</html>
