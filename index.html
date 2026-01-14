@@ -34,6 +34,14 @@
             font-size: 18px;
             font-weight: 700;
             color: #1c5d99;
+            line-height: 1.3;
+        }
+
+        header h1 small {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            color: #4a5d73;
         }
 
         nav a {
@@ -101,6 +109,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -158,21 +168,24 @@
 <body>
 
 <header>
-    <h1>Rogério Estumano<br><small>Serviços Profissionais</small></h1>
+    <h1>
+        Rogério Estumano
+        <small>Serviços Profissionais</small>
+    </h1>
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Serviços</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
     </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
     <h2>Soluções completas para sua casa e negócio</h2>
 </section>
 
-<section class="services">
+<section class="services" id="servicos">
     <div class="card">
-        <img src="Logo Limpeza de Vidro.jpg" alt="Limpeza de Vidro">
+        <img src="logo-limpeza-vidro.jpg" alt="Limpeza de Vidro">
         <h3>Limpeza de Vidro</h3>
         <ul>
             <li>Janelas residenciais</li>
@@ -183,18 +196,17 @@
     </div>
 
     <div class="card">
-        <img src="Logo Roçagem.png" alt="Roçagem">
+        <img src="logo-rocagem.png" alt="Roçagem Profissional">
         <h3>Roçagem Profissional</h3>
         <ul>
             <li>Corte de grama</li>
             <li>Limpeza de terrenos</li>
-            
         </ul>
         <a href="#" class="btn">Saiba mais</a>
     </div>
 
     <div class="card">
-        <img src="Logo ADM.png" alt="Administrativo">
+        <img src="logo-adm.png" alt="Serviços Administrativos">
         <h3>Rotinas Administrativas</h3>
         <ul>
             <li>Organização financeira</li>
@@ -206,12 +218,18 @@
     </div>
 </section>
 
-<section class="contact">
-    <h3>Contato (48) 93500-6603</h3>
-    <form>
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Mensagem"></textarea>
+<section class="contact" id="contato">
+    <h3>Contato – (48) 93500-6603</h3>
+    <form action="#" method="post">
+        <label for="nome" hidden>Nome</label>
+        <input id="nome" type="text" placeholder="Nome" required>
+
+        <label for="email" hidden>Email</label>
+        <input id="email" type="email" placeholder="Email" required>
+
+        <label for="mensagem" hidden>Mensagem</label>
+        <textarea id="mensagem" placeholder="Mensagem"></textarea>
+
         <button class="btn" type="submit">Enviar</button>
     </form>
 </section>
@@ -222,3 +240,4 @@
 
 </body>
 </html>
+
