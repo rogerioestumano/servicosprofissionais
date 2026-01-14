@@ -215,9 +215,7 @@
         <small>Serviços Profissionais</small>
     </h1>
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
+    <a href="#contato">Contato</a>
     </nav>
 </header>
 
@@ -228,14 +226,27 @@
 <section class="services" id="servicos">
 
     <div class="card">
+        <img src="logo-adm.png" alt="Serviços Administrativos">
+        <h3>BPO Financeiro</h3>
+        <ul>
+            <li>Gestão de contas a pagar e a receber</li>
+            <li>Conciliação bancária</li>
+            <li>Gestão do fluxo de caixa</li>
+            <li>Gestão de Rotinas Administrativas</li>
+            <li>Automação de Processos</li>
+            <li>Análise de dados</li>
+        </ul>
+        <a href="#contato" class="btn">Saiba mais</a>
+    </div>
+     
+    <div class="card">
         <img src="logo-limpeza-vidro.jpg" alt="Limpeza de Vidro">
         <h3>Limpeza de Vidro</h3>
         <ul>
-            <li>Janelas residenciais</li>
-            <li>Fachadas comerciais</li>
-            <li>Pós-obra</li>
+            <li>Vidros Residenciais</li>
+            <li>Vidros Comerciais</li>
         </ul>
-        <a href="#" class="btn">Saiba mais</a>
+        <a href="#contato" class="btn">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -245,35 +256,50 @@
             <li>Corte de grama</li>
             <li>Limpeza de terrenos</li>
         </ul>
-        <a href="#" class="btn">Em breve</a>
+        <a href="#contato" class="btn">Saiba mais</a>
     </div>
 
-    <div class="card">
-        <img src="logo-adm.png" alt="Serviços Administrativos">
-        <h3>Rotinas Administrativas</h3>
-        <ul>
-            <li>Organização financeira</li>
-            <li>Gestão de documentos</li>
-            <li>Suporte virtual</li>
-            <li>Análise de dados</li>
-        </ul>
-        <a href="#" class="btn">Saiba mais</a>
-    </div>
-
-</section>
+    </section>
 
 <section class="contact" id="contato">
-    <h3>Contato – (48) 93500-6603</h3>
-    <form>
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Mensagem"></textarea>
-        <button class="btn" type="submit">Enviar</button>
+    <h3>Preencha o formulário e tire suas dúvidas</h3>
+
+    <form id="form-whatsapp">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="mensagem" placeholder="Mensagem" required></textarea>
+
+        <button class="btn" type="submit">
+            Enviar pelo WhatsApp
+        </button>
     </form>
 </section>
 
+<script>
+    document.getElementById("form-whatsapp").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        const texto = 
+            `Olá, meu nome é ${nome}.%0A` +
+            `Email: ${email}%0A` +
+            `Mensagem: ${mensagem}`;
+
+        const telefone = "5548935006603";
+
+        const url = `https://wa.me/${telefone}?text=${texto}`;
+
+        window.open(url, "_blank");
+    });
+</script>
+
+
+
 <footer>
-    © 2026 Rogério Estumano - Serviços Profissionais
+    © 2026 Rogério Estumano - Serviços Profissionais - (48) 93500-6603
 </footer>
 
 </body>
