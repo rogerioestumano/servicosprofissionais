@@ -21,13 +21,15 @@
             color: #1f2d3d;
         }
 
+        /* ================= HEADER ================= */
         header {
             background: #ffffff;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            padding: 20px 40px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         header h1 {
@@ -44,29 +46,37 @@
             color: #4a5d73;
         }
 
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 25px;
             text-decoration: none;
             color: #1c5d99;
             font-weight: 500;
         }
 
+        /* ================= HERO ================= */
         .hero {
             text-align: center;
-            padding: 80px 20px 40px;
+            padding: 70px 20px 40px;
         }
 
         .hero h2 {
             font-size: 32px;
             font-weight: 700;
             color: #1f3c5b;
+            max-width: 800px;
+            margin: auto;
         }
 
+        /* ================= SERVICES ================= */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
-            padding: 40px;
+            padding: 20px;
             max-width: 1200px;
             margin: auto;
         }
@@ -75,12 +85,14 @@
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            padding: 30px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .card img {
-            width: 120px;
+            width: 100%;
+            max-width: 120px;
+            height: auto;
             margin-bottom: 20px;
         }
 
@@ -98,13 +110,14 @@
         .card ul li {
             margin: 8px 0;
             color: #4a5d73;
+            font-size: 14px;
         }
 
         .btn {
             display: inline-block;
             background: #1c5d99;
             color: #ffffff;
-            padding: 10px 25px;
+            padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
@@ -117,11 +130,12 @@
             background: #144774;
         }
 
+        /* ================= CONTACT ================= */
         .contact {
             background: #ffffff;
             max-width: 900px;
             margin: 60px auto;
-            padding: 40px;
+            padding: 40px 20px;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
@@ -140,17 +154,19 @@
 
         .contact input,
         .contact textarea {
-            padding: 12px;
+            padding: 14px;
             border-radius: 8px;
             border: 1px solid #ccd6e0;
             font-size: 14px;
+            width: 100%;
         }
 
         .contact textarea {
             resize: none;
-            height: 120px;
+            height: 130px;
         }
 
+        /* ================= FOOTER ================= */
         footer {
             text-align: center;
             padding: 20px;
@@ -158,9 +174,35 @@
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        /* ================= RESPONSIVO ================= */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
             .hero h2 {
-                font-size: 24px;
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .contact h3 {
+                font-size: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -184,8 +226,9 @@
 </section>
 
 <section class="services" id="servicos">
+
     <div class="card">
-        <img src="/images/logo-limpeza-vidro.jpg" alt="Limpeza de Vidro">
+        <img src="images/logo-limpeza-vidro.jpg" alt="Limpeza de Vidro">
         <h3>Limpeza de Vidro</h3>
         <ul>
             <li>Janelas residenciais</li>
@@ -196,7 +239,7 @@
     </div>
 
     <div class="card">
-        <img src="/images/logo-rocagem.png" alt="Roçagem Profissional">
+        <img src="images/logo-rocagem.png" alt="Roçagem Profissional">
         <h3>Roçagem Profissional</h3>
         <ul>
             <li>Corte de grama</li>
@@ -206,30 +249,25 @@
     </div>
 
     <div class="card">
-        <img src="/images/logo-adm.png" alt="Serviços Administrativos">
+        <img src="images/logo-adm.png" alt="Serviços Administrativos">
         <h3>Rotinas Administrativas</h3>
         <ul>
             <li>Organização financeira</li>
             <li>Gestão de documentos</li>
             <li>Suporte virtual</li>
-            <li>Análise de Dados</li>
+            <li>Análise de dados</li>
         </ul>
         <a href="#" class="btn">Saiba mais</a>
     </div>
+
 </section>
 
 <section class="contact" id="contato">
     <h3>Contato – (48) 93500-6603</h3>
-    <form action="#" method="post">
-        <label for="nome" hidden>Nome</label>
-        <input id="nome" type="text" placeholder="Nome" required>
-
-        <label for="email" hidden>Email</label>
-        <input id="email" type="email" placeholder="Email" required>
-
-        <label for="mensagem" hidden>Mensagem</label>
-        <textarea id="mensagem" placeholder="Mensagem"></textarea>
-
+    <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem"></textarea>
         <button class="btn" type="submit">Enviar</button>
     </form>
 </section>
@@ -240,4 +278,3 @@
 
 </body>
 </html>
-
